@@ -33,7 +33,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=peon-db
+      - POSTGRES_DB=mydb
     networks:
       - application
     container_name: pgdb
