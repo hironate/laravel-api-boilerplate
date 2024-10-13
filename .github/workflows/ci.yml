@@ -33,6 +33,11 @@ jobs:
           cp .env.example .env
           php artisan key:generate
 
+      - name: Create test database
+        run: |
+          cd backend
+          touch database/test.sqlite
+
       - name: Run tests
         run: |
           cd backend
