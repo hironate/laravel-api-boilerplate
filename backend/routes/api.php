@@ -6,6 +6,9 @@ use App\Http\Controllers\Api\Auth\AuthController;
 
 
 Route::controller(AuthController::class)->prefix('auth')->group(function () {
+    Route::get('/health-check', function () {
+        return response()->json(['status' => 'healthy']);
+    })->name('health-check');
     Route::post('/register', 'register')->name('register');
     Route::post('/login', 'login')->name('login');
     Route::get('/email/verify/{id}/{hash}', 'verifyEmail')->middleware('signed')->name('verification.verify');
